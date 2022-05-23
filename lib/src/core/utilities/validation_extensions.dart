@@ -31,4 +31,10 @@ extension ValidationExtension on BuildContext {
   String? validatePassword(String? value) => value == null || value.length < 6
       ? 'Passowrd must have 6 or more characters'
       : null;
+
+  String? validateConfirmPassword(
+          String? value, TextEditingController? password) =>
+      value == null || value != password!.text
+          ? 'Passwords do not match!'
+          : null;
 }

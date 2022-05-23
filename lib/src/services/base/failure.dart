@@ -8,7 +8,7 @@ class Failure {
   final String message;
 
   factory Failure.fromHttpErrorMap(Map<String, dynamic> json) => Failure(
-        json["error"]["message"],
+        json['error']['message'],
       );
 
   @override
