@@ -1,14 +1,14 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:googlebooksi/src/core/constants/strings.dart';
 import 'package:googlebooksi/src/core/routes.dart';
+import 'package:googlebooksi/src/features/startup/views/startup_view.dart';
 import 'package:googlebooksi/src/services/navigation_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp();
+  //await Firebase.initializeApp();
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -25,7 +25,7 @@ class MyApp extends ConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
+      home: const StartupView(),
       onGenerateRoute: Routes.generateRoute,
       navigatorKey: ref.read(navigationService).navigatorKey,
     );
